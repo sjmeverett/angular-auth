@@ -1,0 +1,135 @@
+
+
+/* sans-serif font and fixed width layout */
+body {
+	font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+	font-size: 11px;
+	font-weight: 300;
+	line-height: 1.6em;
+	color: #222;
+	max-width: 960px;
+	width: 95%;
+	margin: 0 auto;
+}
+
+/* links have no underline until they are hovered over */
+a {
+	text-decoration: none;
+}
+
+a:hover {
+	text-decoration: underline;
+}
+
+/* header and footer are full width */
+header {
+	width: 100%;
+}
+
+footer {
+	width: 100%;
+}
+
+/* basic navigation bar styles */
+header nav {
+	width: 100%;
+	overflow: hidden;
+}
+
+header nav ul {
+	margin: 0;
+	padding: 0;
+	list-style: none;
+}
+
+header nav li {
+	float: left;
+	margin-right: 1em;
+}
+
+header nav li a {
+	font-size: 1.5em;
+	padding: 0.5em 0;
+	display: block;
+}
+
+/* we want a one column layout with the 'sidebar' at the bottom, but if the
+screen is big enough we'll have a two column layout */
+aside, main {
+	width: 100%;
+}
+
+@media screen and (min-width: 800px) {
+	main {
+		width: 75%;
+		float: left;
+	}
+
+	aside {
+		width: 20%;
+		float: right;
+	}
+
+	/* the following two styles allow you to put the sidebar on the left, but
+	still have it appear after the main content in the markup */
+	aside.left-sidebar {
+		float: left;
+		position: relative;
+		left: -75%;
+	}
+
+	main.push-right {
+		position: relative;
+		left: 25%;
+	}
+}
+
+/* make the form controls make a little nicer */
+input[type='text'] {
+	border-radius: 3px;
+	border: 1px solid #ddd;
+	padding: 0.5em;
+	width: 200px;
+	margin-right: 5px;
+}
+
+button {
+	padding: 0.5em;
+}
+
+/* non HTML5 browsers default to display:inline; */
+header, footer, nav, main, aside, section {
+	display: block;
+}
+
+/* some browsers go with bold, some with bolder */
+b, strong {
+	font-weight: bold;
+}
+
+/* table borders are so 90s */
+table {
+	border-collapse: collapse;
+	border-spacing: 0;
+}
+
+/* I.E. sucks */
+img {
+	-ms-interpolation-mode: bicubic;
+}
+
+svg {
+	overflow: hidden;
+}
+
+/* box sizing and font smoothing for everything */
+*, *:after, *:before {
+	box-sizing: border-box;
+	-webkit-box-sizing: border-box;
+	-moz-box-sizing: border-box;
+	-webkit-font-smoothing: antialiased;
+	-moz-font-smoothing: antialiased;
+	-o-font-smoothing: antialiased;
+	font-smoothing: antialiased;
+	text-rendering: optimizeLegibility;
+}
